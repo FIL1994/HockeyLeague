@@ -1,0 +1,16 @@
+.idea
+.vscode
+
+.DS_Store
+._.DS_Store
+
+/node_modules/
+/src/config/
+/assets/
+/build/assets/
+/build/build.zip
+TO_DO.txt
+/build/
+package-lock.json
+bundle.js
+/dist/
