@@ -26,6 +26,15 @@ class HeaderNav extends Component {
                 <i>Hockey League</i>
               </h3>
             </Menu.Item>
+            <Menu.Item>
+              <Link to="/home">Home</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/standings">Standings</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/stats">Stats</Link>
+            </Menu.Item>
           </Container>
         </Menu>
       </Segment>
