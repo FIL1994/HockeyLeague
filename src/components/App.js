@@ -1,5 +1,14 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
+import HeaderNav from "./HeaderNav";
 
-const App = props => <div>APP</div>;
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <HeaderNav />
+      </div>
+    );
+  }
+}
 
 export default App;
