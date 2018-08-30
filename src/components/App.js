@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { Router } from "@reach/router";
+import { Router, Redirect } from "@reach/router";
 
+import wrapComponentWithState from "../state";
 import HeaderNav from "./HeaderNav";
 import Home from "./pages/Home";
 import Standings from "./pages/Standings";
@@ -16,6 +17,7 @@ class App extends Component {
             <Home path="/" />
             <Standings path="/standings" />
             <Stats path="/stats" />
+            <Redirect noThrow  from="*" to="/" />
           </Router>
         </main>
       </Fragment>
@@ -23,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default wrapComponentWithState(App);

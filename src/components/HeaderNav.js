@@ -27,7 +27,7 @@ class HeaderNav extends Component {
               </h3>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </Menu.Item>
             <Menu.Item>
               <Link to="/standings">Standings</Link>
