@@ -195,4 +195,5 @@ const TEAM_NAMES = [
 ];
 
 export default TEAM_NAMES;
-export const getTeamName = () => _.random(0, TEAM_NAMES.LENGTH - 1, TEAM_NAMES);
+export const getTeamName = () =>
+  TEAM_NAMES[_.random(0, TEAM_NAMES.length - 1, false)];
