@@ -1,4 +1,6 @@
-export default [
+import _ from "lodash";
+
+const TEAM_NAMES = [
   "Cougars",
   "Bulls",
   "Bees",
@@ -191,3 +193,6 @@ export default [
   "Edge",
   "Mountains"
 ];
+
+export default TEAM_NAMES;
+export const getTeamName = () => _.random(0, TEAM_NAMES.LENGTH - 1, TEAM_NAMES);

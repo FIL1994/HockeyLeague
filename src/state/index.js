@@ -16,7 +16,7 @@ const wrapComponentWithState = provideState({
       const state = await effects.getState();
       await sleep(100);
 
-      console.log("teams", generateTeams(10));
+      console.log("teams from init", generateTeams(10));
 
       return Promise.resolve(state => {
         // console.log("INIT", effects, state);
