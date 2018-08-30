@@ -1,5 +1,6 @@
 import { provideState, update, mergeIntoState } from "freactal";
 
+import { generateTeams } from "../data/generate";
 import { sleep } from "../helpers";
 
 const wrapComponentWithState = provideState({
@@ -13,8 +14,10 @@ const wrapComponentWithState = provideState({
     getState: () => state => state,
     initialize: async effects => {
       const state = await effects.getState();
-      console.log("INIT", state);
-      await sleep(2000);
+      await sleep(100);
+
+      console.log("teams", generateTeams(10));
+
       return Promise.resolve(state => {
         // console.log("INIT", effects, state);
         return { ...state, hello: "hi" };
