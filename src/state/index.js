@@ -6,31 +6,29 @@ import { sleep } from "../helpers";
 const wrapComponentWithState = provideState({
   initialState: () => ({
     counter: 0,
-    firstName: "Bob",
-    lastName: "Smith",
-    hello: "hey"
+    teams: [],
+    generateTeamsStatus: ""
   }),
   effects: {
     getState: () => state => state,
     initialize: async effects => {
       const state = await effects.getState();
-      await sleep(100);
-
-      console.log("teams from init", generateTeams(10));
+      effects.setGenerateTeamsStatus("Generating team names");
+      const teams = generateTeams(10);
+      console.log("TEAMS", teams);
+      await sleep(500);
+      effects.setGenerateTeamsStatus("Finished generating team names");
+      setTimeout(() => effects.setGenerateTeamsStatus("Done!"), 300);
 
       return Promise.resolve(state => {
-        // console.log("INIT", effects, state);
-        return { ...state, hello: "hi" };
+        return { ...state, teams };
       });
     },
     addOne: () => state =>
       mergeIntoState({ counter: state.counter + 1 })(state),
-    setFirstName: update((state, val) => ({ firstName: val })),
-    setLastName: update((state, val) => ({ lastName: val }))
-  },
-  computed: {
-    fullName: ({ firstName, lastName }) => `${firstName} ${lastName}`,
-    greeting: ({ fullName }) => `Hi, ${fullName}, and welcome!`
+    setGenerateTeamsStatus: update((state, val) => ({
+      generateTeamsStatus: val
+    }))
   }
 });
 
