@@ -1,7 +1,8 @@
 class Team {
-  constructor({ city, name }) {
+  constructor({ city, name, abbreviation }) {
     this.city = city;
     this.name = name;
+    this.abbreviation = abbreviation;
   }
 
   get teamName() {
