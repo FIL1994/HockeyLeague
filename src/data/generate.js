@@ -3,6 +3,7 @@ import moment from "moment";
 import faker from "faker";
 import { Chance } from "chance";
 
+import Team from "../models/Team";
 import { getTeamName } from "./teamNames";
 import { getUniq } from "../helpers";
 
@@ -14,10 +15,19 @@ const generateTeams = count => {
   let teams = [],
     playerID = 0;
 
-  const teamCities = generateCities(count);
-  const teamNames = generateTeamNames(count);
+  const cities = generateCities(count);
+  const names = generateTeamNames(count);
 
-  console.log("CITIES", teamCities, teamNames);
+  for (let i = 0; i < count; i++) {
+    teams.push(
+      new Team({
+        city: cities[i],
+        name: names[i]
+      })
+    );
+  }
+
+  return teams;
 };
 
 function generateCities(count) {
@@ -32,7 +42,6 @@ function generateTeamNames(count) {
   let teamNames = [];
   for (let i = 0; i < count; i++) {
     teamNames.push(getUniq(teamNames, getTeamName));
-    console.log(getTeamName());
   }
   return teamNames;
 }
