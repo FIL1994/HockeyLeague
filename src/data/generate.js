@@ -9,8 +9,6 @@ import { getUniq } from "../helpers";
 
 const CHANCE = new Chance(moment().unix());
 
-window.faker = faker;
-
 const generateTeams = count => {
   let teams = [],
     playerID = 0;
