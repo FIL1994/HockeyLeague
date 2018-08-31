@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development --port=8080 --progress",
-    "build": "set NODE_ENV=production && webpack --mode=production -p --progress"
+    "build": "cross-env NODE_ENV=production webpack --mode=production -p --progress"
   },
   "author": "Philip Van Raalte",
   "license": "ISC",
@@ -34,6 +34,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
     "babel-minify": "0.5.0-alpha.3cc09dcf",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "google-closure-compiler": "^20180805.0.0",
     "html-loader": "^0.5.5",
