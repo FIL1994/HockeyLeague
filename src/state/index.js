@@ -14,7 +14,7 @@ const wrapComponentWithState = provideState({
     initialize: async effects => {
       const state = await effects.getState();
       effects.setGenerateTeamsStatus("Generating team names");
-      const teams = generateTeams(10);
+      const teams = generateTeams(20);
       console.log("TEAMS", teams);
       await sleep(500);
       effects.setGenerateTeamsStatus("Finished generating team names");
