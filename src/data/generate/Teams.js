@@ -99,7 +99,7 @@ function getAbbreviation(abbreviations, teamName) {
         teamNameWords[1].charAt(0) +
         tryNum.toString().charAt(0);
     }
-    abbreviation = _.toUpper(abbreviation);
+    abbreviation = abbreviation.toUpperCase();
     tryNum++;
   } while (abbreviations.indexOf(abbreviation) !== -1);
 
