@@ -1,17 +1,12 @@
 import _ from "lodash";
-import moment from "moment";
 import faker from "faker";
-import { Chance } from "chance";
 
-import Team from "../models/Team";
-import { getTeamName } from "./teamNames";
-import { getUniq } from "../helpers";
-
-const CHANCE = new Chance(moment().unix());
+import Team from "../../models/Team";
+import { getTeamName } from "../teamNames";
+import { getUniq } from "../../helpers";
 
 const generateTeams = count => {
-  let teams = [],
-    playerID = 0;
+  let teams = [];
 
   const cities = generateCities(count);
   const names = generateTeamNames(count);
@@ -111,4 +106,4 @@ function getAbbreviation(abbreviations, teamName) {
   return abbreviation;
 }
 
-export { generateTeams };
+export default generateTeams;
