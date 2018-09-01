@@ -1,7 +1,7 @@
 import { provideState, update, mergeIntoState } from "freactal";
 
-import { generateTeams } from "../data/generate";
-import { sleep } from "../helpers";
+import { generateTeams } from "generate";
+import { sleep } from "helpers";
 
 const wrapComponentWithState = provideState({
   initialState: () => ({

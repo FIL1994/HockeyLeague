@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const path = require("path");
 
 const isProduction = String(process.env.NODE_ENV).includes("production");
 
@@ -75,5 +76,13 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      helpers: path.resolve(__dirname, "src/helpers"),
+      data: path.resolve(__dirname, "src/data"),
+      generate: path.resolve(__dirname, "src/data/generate"),
+      models: path.resolve(__dirname, "src/models")
+    }
+  }
 };

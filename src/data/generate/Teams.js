@@ -1,9 +1,9 @@
 import _ from "lodash";
 import faker from "faker";
 
-import Team from "../../models/Team";
+import Team from "models/Team";
 import { getTeamName } from "../teamNames";
-import { getUniq } from "../../helpers";
+import { getUniq } from "helpers";
 
 const generateTeams = count => {
   let teams = [];
