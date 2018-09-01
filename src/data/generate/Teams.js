@@ -1,8 +1,8 @@
 import _ from "lodash";
-import faker from "faker";
 
 import Team from "models/Team";
 import { getTeamName } from "../teamNames";
+import { getCity } from "../cities";
 import { getUniq } from "helpers";
 
 const generateTeams = count => {
@@ -31,7 +31,7 @@ const generateTeams = count => {
 function generateCities(count) {
   let cities = [];
   for (let i = 0; i < count; i++) {
-    cities.push(getUniq(cities, faker.address.city));
+    cities.push(getUniq(cities, getCity));
   }
   return cities;
 }
