@@ -16,4 +16,4 @@ class Player {
   };
 }
 
-export default Team;
+export default Player;
