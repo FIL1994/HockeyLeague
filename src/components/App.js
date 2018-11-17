@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Router, Redirect } from "@reach/router";
 
 import wrapComponentWithState from "../state";
@@ -10,7 +10,7 @@ import Stats from "./pages/Stats";
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <>
         <HeaderNav />
         <main>
           <Router>
@@ -20,7 +20,7 @@ class App extends Component {
             <Redirect noThrow  from="*" to="/" />
           </Router>
         </main>
-      </Fragment>
+      </>
     );
   }
 }

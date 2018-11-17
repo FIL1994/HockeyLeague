@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { injectState } from "freactal";
 
 class Home extends Component {
@@ -6,7 +6,7 @@ class Home extends Component {
     const { generateTeamsStatus, teams } = this.props.state;
 
     return (
-      <Fragment>
+      <>
         <h3>Home</h3>
         <hr />
         <p>{generateTeamsStatus}</p>
@@ -15,7 +15,7 @@ class Home extends Component {
             return <li key={t.teamName}>{t.teamName}</li>;
           })}
         </ul>
-      </Fragment>
+      </>
     );
   }
 }
