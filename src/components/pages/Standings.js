@@ -1,9 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Standings extends Component {
-  render() {
-    return <h3>Standings</h3>;
-  }
-}
+const Standings = () => <h3>Standings</h3>;
 
 export default Standings;

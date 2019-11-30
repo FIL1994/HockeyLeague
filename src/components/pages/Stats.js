@@ -1,9 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Stats extends Component {
-  render() {
-    return <h3>Stats</h3>;
-  }
-}
+const Stats = () => <h3>Stats</h3>;
 
 export default Stats;

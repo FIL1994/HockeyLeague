@@ -7,22 +7,18 @@ import Home from "./pages/Home";
 import Standings from "./pages/Standings";
 import Stats from "./pages/Stats";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <HeaderNav />
-        <main>
-          <Router>
-            <Home path="/" />
-            <Standings path="/standings" />
-            <Stats path="/stats" />
-            <Redirect noThrow  from="*" to="/" />
-          </Router>
-        </main>
-      </>
-    );
-  }
-}
+const App = () => (
+  <>
+    <HeaderNav />
+    <main>
+      <Router>
+        <Home path="/" />
+        <Standings path="/standings" />
+        <Stats path="/stats" />
+        <Redirect noThrow from="*" to="/" />
+      </Router>
+    </main>
+  </>
+);
 
 export default wrapComponentWithState(App);
