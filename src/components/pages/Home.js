@@ -1,9 +1,8 @@
 import React from "react";
 import { injectState } from "freactal";
 
-const Home = () => {
-  const { generateTeamsStatus, teams } = this.props.state;
-
+const Home = props => {
+  const { generateTeamsStatus, teams } = props.state;
   return (
     <>
       <h3>Home</h3>
